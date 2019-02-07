@@ -7,7 +7,6 @@
         #mygamecanvas {
             overflow: hidden;
         }
-
     </style>
 </head>
 
@@ -22,17 +21,11 @@
         });
         document.addEventListener('resize', resizeCanvas);
 
-
-
         window.onload = init;
         var c = document.getElementById("mygamecanvas");
         var ctx = c.getContext("2d");
 
-
-
         c.addEventListener('click', clickCanvas);
-
-
 
         var keys = {
             down: 40,
@@ -116,7 +109,6 @@
             ctx.fillText("Coded By Vicious.Circle", gameOpt.canvasSize / 2, gameOpt.canvasSize / 2 + 60);
         }
 
-
         function downKey(key) {
             if (gameOpt.stop) return;
             switch (key) {
@@ -167,7 +159,6 @@
                 gameOpt.stop = false;
 
         }
-
 
         function createColorForNumber(num) {
             var color = {
