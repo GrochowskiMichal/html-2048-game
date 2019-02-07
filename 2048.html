@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>2048</title>
+    <title>2048 game</title>
     <style>
         #mygamecanvas {
             overflow: hidden;
@@ -17,32 +17,30 @@
     </div>
 
     <script>
-        ////////////LISTENERS
         document.addEventListener('keydown', function(event) {
             downKey(event.keyCode);
         });
         document.addEventListener('resize', resizeCanvas);
-        ////////////END
 
-        ////////VARIABLES
+
+
         window.onload = init;
         var c = document.getElementById("mygamecanvas");
         var ctx = c.getContext("2d");
-        /////////END
 
-        /////////CANVAS LISTENERS
+
+
         c.addEventListener('click', clickCanvas);
-        /////////END
 
-        //////OBJECTS
+
+
         var keys = {
             down: 40,
             right: 39,
             up: 38,
             left: 37
         }
-        //arrows => 40,39,38,37 down,right,up,left
-        //s,d,w,a => 83,68,87,65
+
         var gameOpt = {
             score: 0,
             highScore: 0,
@@ -63,9 +61,9 @@
             numberTextColor: "#000000"
         }
         var numbers;
-        //////END
 
-        //////DRAW FUNCTIONS
+
+
         function drawBoard() {
             var shapeSize = (gameOpt.canvasSize - gameOpt.emptySize * (gameOpt.boardSize + 1)) / gameOpt.boardSize;
             for (var i = 0; i < gameOpt.boardSize; i++) {
@@ -117,9 +115,8 @@
             ctx.fillText("Click game screen to play!", gameOpt.canvasSize / 2, gameOpt.canvasSize / 2 + 40);
             ctx.fillText("Coded By Vicious.Circle", gameOpt.canvasSize / 2, gameOpt.canvasSize / 2 + 60);
         }
-        //////END
 
-        //////LISTENERS FUNCTIONS
+
         function downKey(key) {
             if (gameOpt.stop) return;
             switch (key) {
@@ -170,9 +167,8 @@
                 gameOpt.stop = false;
 
         }
-        //////END
 
-        //////GAME FUNCTIONS
+
         function createColorForNumber(num) {
             var color = {
                 r: 256,
@@ -296,9 +292,8 @@
             }
         }
 
-        //END
 
-        /////MAIN FUNCTIONS
+
         function init() {
             gameOpt.isFinish = false;
             gameOpt.isWin = false;
@@ -324,7 +319,6 @@
                 drawMessageBox("You reach 2048!", false);
 
         }
-        /////END
 
     </script>
 </body>
